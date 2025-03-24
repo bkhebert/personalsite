@@ -1,0 +1,15 @@
+{
+  "name": "personalsite",
+  "version": "1.0.0",
+  "description": "A website that will showcase my UI capabilities and skills as a developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
