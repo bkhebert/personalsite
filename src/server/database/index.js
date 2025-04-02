@@ -1,0 +1,18 @@
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+const distPath = path.resolve(__dirname, '..', '..', 'dist');
+app.use(express.static(distPath));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+});
+
+// SERVER CONNECTION
+app.listen(port, () => {
+  console.log(`\
+  Listening at:\n \n http://127.0.0.1:${port} \n\n http://localhost:${port}
+  `);
+});
