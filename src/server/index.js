@@ -3,8 +3,8 @@ const path = require('path');
 
 const app = express();
 const port = 3000;
-const distPath = path.resolve(__dirname, '..', '..', 'dist');
-app.use(express.static(distPath));
+const distPath = path.resolve(__dirname, '..', 'dist');
+app.use(express.static(path.resolve(__dirname, '../../dist')));
 
 
 // SERVER CONNECTION
