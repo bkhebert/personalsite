@@ -20,6 +20,14 @@ module.exports = {
         publicPath: '/', // specifies the base path for all assets within your application
         filename: 'bundle.js', // bundled output file name
     },
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        port: 3000,
+        open: true,
+    },
+    resolve: {
+        extensions: [".js", ".jsx"],
+      },
     module: {
         rules: [
             { // For pixi.js node modules
@@ -38,36 +46,29 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
                     },
                 },
+                exclude: /node_modules/,
             },
             {
-                // css processing
-                test: /\.css$/, // tests file types ending in .less or .css
+                test: /\.css$/,
                 use: [
-                  "style-loader", //! NOT SECURE FOR LIVE PROD ENV
-                  "css-loader", // takes the CSS files and returns the files with imports and url(...) resolved
+                  'style-loader',
+                  'css-loader',
+                  'postcss-loader',
                 ],
-              },
+              }
         ],
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(CLIENT_DIR, 'index.html'), // Custom template
+            filename: 'index.html',
         }),
     ],
-    devServer: {
-        static: path.join(__dirname, 'dist'),
-        port: 3000,
-        open: true,
-    },
-    resolve: {
-      extensions: ['.js', '.jsx'],
-    },
+
 };
