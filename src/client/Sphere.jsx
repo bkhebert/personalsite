@@ -1,20 +1,30 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
 const Sphere = ({position, size, color}) => {
   const ref = useRef();
+  const [isHovered, setIsHovered ] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useFrame((state, delta) => {
-    ref.current.rotation.x += delta;
-    ref.current.rotation.y += delta * 2.0;
-    ref.current.position.z = Math.sin(state.clock.elapsedTime) * 2;
+    const speed = isHovered ? 3 : 0.2
+    // ref.current.rotation.x += delta;
+    ref.current.rotation.y += delta * speed;
+    // ref.current.position.z = Math.sin(state.clock.elapsedTime) * 2;
     
   })
 
   return (
-    <mesh position={position} ref={ref}>
+    <mesh 
+    position={position} 
+    ref={ref} 
+    onPointerEnter={(event) => (event.stopPropagation(), setIsHovered(true))}
+    onPointerLeave={() => setIsHovered(false) }
+    onClick={() => setIsClicked(!isClicked)}
+    scale={isClicked ? 1.5: 1 }
+    >
           <sphereGeometry args={size} ></sphereGeometry>
-          <meshStandardMaterial color={color} wireframe={true}></meshStandardMaterial>
+          <meshStandardMaterial color={isHovered ? "red" : color} wireframe={true}></meshStandardMaterial>
     </mesh>
   )
 } 
