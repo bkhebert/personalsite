@@ -7,18 +7,29 @@ import Torus from './Torus';
 import TorusKnot from './TorusKnot';
 import { OrbitControls, useHelper } from '@react-three/drei';
 import { DirectionalLightHelper } from 'three';
+import { useControls } from 'leva';
+
 
 const ThreeJSTest = () => {
   const directionalLightRef = useRef()
-
+  const {lightColor, lightIntensity } = useControls({
+    lightColor: "white",
+    lightIntensity: {
+      value: 0.5,
+      min: 0,
+      max: 5,
+      step: 0.1
+    }
+  })
   useHelper(directionalLightRef, DirectionalLightHelper, 0.5, "white")
 
     return ( 
       <>
         <directionalLight 
         position={[0, 0, 2]} 
-        intensity={2}
+        intensity={lightIntensity}
         ref={directionalLightRef}
+        color={lightColor}
         />
         <ambientLight intensity={0.5}/>
         {/* <group position={[0, -1, 0]}>
