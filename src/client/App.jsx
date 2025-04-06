@@ -1,13 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import ThreeJSTest from './ThreeJSTest'
-import { Canvas } from '@react-three/fiber';
+import Scene from './Scene';
 const App = () => {
   const ref = useRef();
 
-
-  useEffect(() => {
-
-  }, [])
 
     return ( 
         <div>
@@ -16,9 +11,7 @@ const App = () => {
       </div>
       <div>
       <div style={{ width: '800px', height: '600px' }}>
-      <Canvas>
-      <ThreeJSTest></ThreeJSTest>
-      </Canvas>
+      <Scene/>
       </div>
       </div>
       </div>
