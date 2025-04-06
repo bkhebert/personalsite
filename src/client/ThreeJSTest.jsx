@@ -4,6 +4,7 @@ import Stats from 'three/examples/jsm/libs/stats.module';
 import Cube from './Cube';
 import Sphere from './Sphere';
 import Torus from './Torus';
+import InstancedBoxes from './InstancedBoxes';
 import TorusKnot from './TorusKnot';
 import { OrbitControls, useHelper } from '@react-three/drei';
 import { DirectionalLightHelper } from 'three';
@@ -40,8 +41,9 @@ const ThreeJSTest = () => {
         </group> */}
         {/* <Sphere position={[0, 0, 1]} size={[2, 60, 60]} color={"yellow"}/> */}
         {/* <Torus position={[2, 0, 1]} size={[0.5, 0.1, 30, 30]} color={"hotpink"}/> */}
-        <TorusKnot 
-        position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/> 
+        {/* <TorusKnot 
+        position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/>  */}
+        <InstancedBoxes/>
         {/* <Cube position={[0, 0, 1]} color={"blue"} size={[1, 1, 1]}/> */}
           <OrbitControls enableZoom={false}></OrbitControls>
           </>
