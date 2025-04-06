@@ -41,7 +41,7 @@ const ThreeJSTest = () => {
         {/* <Sphere position={[0, 0, 1]} size={[2, 60, 60]} color={"yellow"}/> */}
         {/* <Torus position={[2, 0, 1]} size={[0.5, 0.1, 30, 30]} color={"hotpink"}/> */}
         <TorusKnot 
-        position={[0, 0, 0]} size={[0.5, 0.1, 1000, 50]} color={"blue"}/> 
+        position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/> 
         {/* <Cube position={[0, 0, 1]} color={"blue"} size={[1, 1, 1]}/> */}
           <OrbitControls enableZoom={false}></OrbitControls>
           </>
