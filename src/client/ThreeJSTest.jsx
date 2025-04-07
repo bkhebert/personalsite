@@ -6,6 +6,7 @@ import Sphere from './Sphere';
 import Torus from './Torus';
 import InstancedBoxes from './InstancedBoxes';
 import TorusKnot from './TorusKnot';
+import Textures from './Textures';
 import Ripple from './Ripple';
 import Materials from './Materials';
 import { OrbitControls, useHelper } from '@react-three/drei';
@@ -61,6 +62,7 @@ const ThreeJSTest = () => {
         <InstancedBoxes/>
         <Ripple></Ripple>
         <Materials></Materials>
+        <Textures></Textures>
         {/* <Cube position={[0, 0, 1]} color={"blue"} size={[1, 1, 1]}/> */}
           <OrbitControls enableZoom={true}></OrbitControls>
           </>
