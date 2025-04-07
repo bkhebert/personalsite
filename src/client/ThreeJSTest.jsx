@@ -6,6 +6,7 @@ import Sphere from './Sphere';
 import Torus from './Torus';
 import InstancedBoxes from './InstancedBoxes';
 import TorusKnot from './TorusKnot';
+import Ripple from './Ripple';
 import { OrbitControls, useHelper } from '@react-three/drei';
 import { DirectionalLightHelper } from 'three';
 import { useControls } from 'leva';
@@ -44,6 +45,7 @@ const ThreeJSTest = () => {
         {/* <TorusKnot 
         position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/>  */}
         <InstancedBoxes/>
+        <Ripple></Ripple>
         {/* <Cube position={[0, 0, 1]} color={"blue"} size={[1, 1, 1]}/> */}
           <OrbitControls enableZoom={true}></OrbitControls>
           </>

@@ -13,9 +13,9 @@ function Ripple(){
   // Used for equation to make a ripple
   // Think of these like dials you can turn to change the wave:
   let phaseShift = 0; // Makes the waves move outward (like dropping a pebble in water)
-  let frequency = 0.02; // Higher = more ripples (like tiny waves vs big ocean waves)
+  let frequency = 0.028; // Higher = more ripples (like tiny waves vs big ocean waves)
   let amplitude = 1; // Higher = taller waves
-  const rotationSpeed = 0.02; // How fast the whole thing spins
+  const rotationSpeed = 0.01; // How fast the whole thing spins
 
   /* ===== THE MAGIC WAVE FORMULA ===== */
   // This math creates the ripple pattern:
@@ -42,7 +42,7 @@ function Ripple(){
 
     /* ===== CREATE ALL THE POINTS ===== */
     const count = 100; // # of points
-    const sep = 1; // distance to each point
+    const sep = 1.3; // distance to each point
 
   // This creates all the starting positions:
   let positions = useMemo(() => {
