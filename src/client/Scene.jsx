@@ -8,12 +8,10 @@ import { Perf } from 'r3f-perf'
 const Scene = () => {
 
     return ( 
-      // <Suspense fallback={null}>
       <Canvas>
         <Perf />
       <ThreeJSTest></ThreeJSTest>
       </Canvas>
-      // </Suspense>
     )
 };
 
