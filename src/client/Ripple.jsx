@@ -1,14 +1,25 @@
 import * as THREE from "three";
 import transparentstar from "../assets/transparentstar.png";
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import { useLoader } from "@react-three/fiber";
 
 function Ripple(){
 
   const imgTex= useLoader(THREE.TextureLoader, transparentstar);
 
+
+  let phaseShift = 0;
+  let frequency = 0.02;
+  let amplitude = 3;
+  
+  const graph = useCallback((x, z) => {
+            // this equation can be demonstrated in https://grapher.mathpix.com/
+    return Math.sin( frequency * (x ** 2 + z ** 2 + phaseShift )) * amplitude;
+  }, [frequency, amplitude, phaseShift]);
+
+
   const count = 100; // # of points
-  const sep = 3; // distance to each point
+  const sep = 1; // distance to each point
   // [x1, y1, z1]
   let positions = useMemo(() => {
     let positions = []
@@ -17,7 +28,7 @@ function Ripple(){
       for(let zi = 0; zi < count; zi++){
         let x = sep * (xi - count / 2);
         let z = sep * (zi - count / 2);
-        let y = 0;
+        let y = graph(x, z);
         positions.push(x, y, z)
       }
     }
@@ -39,7 +50,7 @@ function Ripple(){
       </bufferGeometry>
       <pointsMaterial
       attach={"material"}
-      color={0x00AFF}
+      color={"white"}
       map={imgTex}
       size={0.5}
       transparent={false}

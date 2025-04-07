@@ -45,7 +45,7 @@ const ThreeJSTest = () => {
         position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/>  */}
         <InstancedBoxes/>
         {/* <Cube position={[0, 0, 1]} color={"blue"} size={[1, 1, 1]}/> */}
-          <OrbitControls enableZoom={false}></OrbitControls>
+          <OrbitControls enableZoom={true}></OrbitControls>
           </>
     )
 };
