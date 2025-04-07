@@ -14,7 +14,7 @@ const Torus = ({position, size, color}) => {
   return (
     <mesh position={position} ref={ref}>
           <torusGeometry args={size}></torusGeometry>
-          <meshStandardMaterial color={color}></meshStandardMaterial>
+          <meshLambertMaterial color={color} emissive={"green"}></meshLambertMaterial>
     </mesh>
   )
 } 

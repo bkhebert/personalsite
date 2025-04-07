@@ -15,7 +15,7 @@ import { useControls } from 'leva';
 
 const ThreeJSTest = () => {
   const directionalLightRef = useRef()
-  const {lightColor, lightIntensity } = useControls({
+  const {lightColor, lightIntensity } = useControls("directionalLight", {
     lightColor: "white",
     lightIntensity: {
       value: 0.5,
@@ -24,6 +24,18 @@ const ThreeJSTest = () => {
       step: 0.1
     }
   })
+  const { 
+    pointLightX, 
+    pointLightY, 
+    pointLightZ, 
+    pointLightIntensity 
+  } = useControls("Light", { 
+    pointLightX:  { value: 5, step: 0.2 },
+    pointLightY:  { value: 5, step: 0.2 },
+    pointLightZ:  { value: 5, step: 0.2 },
+    pointLightIntensity: 2
+  })
+
   useHelper(directionalLightRef, DirectionalLightHelper, 0.5, "white")
 
     return ( 
@@ -35,6 +47,7 @@ const ThreeJSTest = () => {
         color={lightColor}
         />
         <ambientLight intensity={0.5}/>
+        <pointLight position={[pointLightX, pointLightY, pointLightZ]} intensity={pointLightIntensity}/>
         {/* <group position={[0, -1, 0]}>
         <Cube position={[1, 0, 0]} color={"purple"} size={[1, 1, 1]}/>
         <Cube position={[-1, 0, 0]} color={"gold"} size={[1, 1, 1]}/>
@@ -42,7 +55,7 @@ const ThreeJSTest = () => {
         <Cube position={[-1, 2, 0]} color={"blue"} size={[1, 1, 1]}/>
         </group> */}
         {/* <Sphere position={[0, 0, 1]} size={[2, 60, 60]} color={"yellow"}/> */}
-        {/* <Torus position={[2, 0, 1]} size={[0.5, 0.1, 30, 30]} color={"hotpink"}/> */}
+        <Torus position={[2, 4, 1]} size={[0.5, 0.1, 30, 30]} color={"hotpink"}/>
         {/* <TorusKnot 
         position={[0, 0, 0]} size={[0.1, 1000, 50]} color={"blue"}/>  */}
         <InstancedBoxes/>
