@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Scene from './Scene';
+
 const App = () => {
-  const ref = useRef();
 
 
     return ( 
