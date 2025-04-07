@@ -14,8 +14,8 @@ const Scene = () => {
         <PerspectiveCamera
         makeDefault
         fov={75}
-        position={[25, 8, 0]}
-        rotation={[0, -5, 0]}
+        position={[10, 0, 0]}
+        rotation={[0, 0, 0]}
   />
         <Perf />
 
