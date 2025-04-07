@@ -1,5 +1,3 @@
-/* ===== CORE IMPORTS ===== */
-// React's fundamental building blocks
 import React, { useState, useRef } from "react"; 
 // GUI controls for tweaking values in real-time
 import { useControls } from 'leva';
