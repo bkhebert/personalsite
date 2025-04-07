@@ -9,10 +9,8 @@ const App = () => {
         <div className="p-10 bg-red-500 text-white text-2xl">
         If this text is red, Tailwind is working... frfrfr
       </div>
-      <div>
-      <div style={{ width: '800px', height: '600px' }}>
+      <div style={{ width: '100vw', height: '100vw' }}>
       <Scene/>
-      </div>
       </div>
       </div>
 

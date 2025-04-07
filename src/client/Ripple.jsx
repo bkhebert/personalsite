@@ -18,18 +18,18 @@ function Ripple(){
         let x = sep * (xi - count / 2);
         let z = sep * (zi - count / 2);
         let y = 0;
-        positions.push([x, y, z])
+        positions.push(x, y, z)
       }
     }
 
     return new Float32Array(positions);
-  }, [count, sep])
+  }, [count, sep]);
 
   return(
     <points>
       <bufferGeometry attach="geometry">
         <bufferAttribute
-         attach='attributes-position'
+         attach={'attributes-position'}
         array={positions}
         count={positions.length / 3}
         itemSize={3}
@@ -38,12 +38,12 @@ function Ripple(){
         </bufferAttribute>
       </bufferGeometry>
       <pointsMaterial
-      attach="material"
+      attach={"material"}
       color={0x00AFF}
       map={imgTex}
       size={0.5}
       transparent={false}
-      alphaText={0.5}
+      alphaTest={0.5}
       opacity={1.0}
       >
 
